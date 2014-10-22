@@ -1,6 +1,7 @@
 #Online bingo fangame for the podcast If I Were You
 #http://ifiwereyoushow.com
 #http://seizethecheese.com
+#TODO: Mobile oh god
 
 import webapp2
 import jinja2
@@ -27,6 +28,7 @@ theme_events = [
         'Stony\'s Version',
         'Rhymes "If I Were You" with "Yo Do You"',
         '"Seize the Cheese"',
+        'Really obscure reference',
         'Parody of a popular song',
         'Shoehorns too many syllables into a line',
         'Parody of a sitcom\'s theme song',
@@ -42,29 +44,45 @@ theme_events = [
 
 free_show = 'Relationship question'
 show_events = [
+        'Amir says "Mercy"',
         'Live podcast',
+        '____ in that regard',
         'Guest Episode',
         'Douchebag guy',
+        'Jake incorrectly guesses the theme of anonymous names',
         'They tell someone to break up',
         'Jake approves of Amir\'s intro',
         '"Momma turn down the podcast"',
+        'Amir takes over 30 seconds to introduce the show',
+        'They don\'t introduce the show for over 5 minutes after the theme song',
+        'Jake talks shit about his dad',
+        'One of them messes up reading a question',
+        '"Haeeehhh!"',
+        'Really obscure anonymous names',
         'Something is coy',
-        'Someone rhymes jokingly',
+        'Someone rhymes',
         'Jake shows appreciation for his dad\'s money',
         'Amir tries to divert attention from his middle name',
         'Jake professes his love for Amir, which is not returned',
         'Someone is "hard" or "jerking off right now"',
-        'The advice Jake gives makes it sound like he\'s gotten laid in this same situation before',
+        'Jake gives advice having gotten laid in this same situation before',
+        '"A dimepiece/10 cent coin/etc."',
+        'Seemingly normal/mundane question that J&A jokingly mess with the guy for',
         'Amir gives math advice',
         'Amir tries to turn the question into tips for him getting laid, personally',
         '"Conundrum"',
         '"Sticky situation"',
         'Jake gives up mid-way through answering a question',
-        'The guest gets put on blast or puts J&A on blast',
+        'Jake sings alone',
+        'J&A burst into song',
+        'They speak in Eminem lyrics',
+        'Someone gets put on blast',
+        '"I resent the implication..."',
         'Jake gets depressed by the question',
         'The episode is hosted by Josh, Vance, or The Pinch',
         'Amir adds "-smith" to the end of an activity/occupation',
         'Tinder comes up',
+        'Callback joke from a previous question',
         'Bonus Thursday episode',
         'Someone insults J&A in the question prompt',
 ]
@@ -73,10 +91,16 @@ free_ad = 'Things got real'
 ad_events = [
         'Only Amir telling the ad',
         '3+ ads in 1 episode',
+        'They "Lose a sponsor" during an ad',
+        'They jokingly advertise for something that is not a company (bananas)',
+        'Names/website shoutouts are read',
+        'The ad pitch uses a rhyme',
         'Naturebox',
+        'Jake takes the bit too far',
         'Amir repeats the name of the company at least 3 times in a row',
         'Squarespace',
         'MeUndies',
+        'More time is spent during the break on ads than on talking during the break',
         'New sponsor (first time on the show)',
         'J&A get free stuff from the ad company',
         'Jake mispronounces the company\'s name intentionally',
@@ -140,6 +164,7 @@ class MainHandler(webapp2.RequestHandler):
         template_values = {
                 'rows': rows, #list of lists - assert(len(rows) == 25 and 13th one is the default)
                 'free_points': free_points,
+                'gamemode': gamemode,
         }
         self.response.write(template.render(template_values))
 

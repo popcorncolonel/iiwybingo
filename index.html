@@ -32,7 +32,7 @@
         <tr class="iiwyrow">
             {% for option in row %}
                 {% if option in free_points %}
-                    <td class="btn checked">{{ option }}</td>
+                    <td class="btn checked free">{{ option }}</td>
                 {% else %}
                     <td class="btn">{{ option }}</td>
                 {% endif %}
@@ -40,9 +40,33 @@
         </tr>
         {% endfor %}
     </table>
-{#
-    Footer with "random episode" link
-#}
+
+    {% if gamemode == 'ad' %}
+    <a href="/theme">
+        <div class='navbtn right'>
+            Theme Song mode
+        </div>
+    </a>
+    {% elif gamemode == 'theme' %}
+    <a href="/ad">
+        <div class='navbtn left'>
+            Ad mode
+        </div>
+    </a>
+    <a href="/show">
+        <div class='navbtn right'>
+            Podcast mode
+        </div>
+    </a>
+    {% elif gamemode == 'show' %}
+    <a href="/theme">
+        <div class='navbtn left'>
+            Theme song mode
+        </div>
+    </a>
+    {% endif %}
+
+    {# Footer with "random episode" link, "who made this?", suggest a bingo card #}
 <script type="text/javascript" src="scripts/script.js"></script>
 </body>
 

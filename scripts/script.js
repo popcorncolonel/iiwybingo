@@ -1,6 +1,7 @@
 
 function toggleClass(element) {
     button = element.target;
+    if (button.className.indexOf('free') >= 0) return;
     if (button.className.indexOf('checked') >= 0) {
         button.className = 'btn';
     } else {

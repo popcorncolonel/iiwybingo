@@ -19,24 +19,9 @@ td {
     width:10%;
 }
 
-.btn:hover {
-    background-color: #BCBCBC;
-    cursor: pointer;
-}
-.btn {
-    padding: 0 20px;
-    width:10%;
-    height: 100px;
-    background-color: #EDEDED;
-}
-
-.checked:hover{
-    background-color: #A72234;
-}
-
-.checked {
-    background-color: #872234;
-    color: #DDD;
+a {
+    text-decoration: none;
+    color:black;
 }
 
 #title,
@@ -53,8 +38,61 @@ td {
 }
 
 #header {
+    margin-top: -10px;
+    margin-left: -12px;
+    padding-top: -10px;
+    width: 100%;
+
     border-style: outset;
-    border-width: 10px;
+    border-width: 10px 10px;
     border-color: #black;
+}
+
+
+.navbtn:hover,
+.btn:hover {
+    background-color: #BCBCBC;
+    cursor: pointer;
+}
+.navbtn,
+.btn {
+    padding: 0 20px;
+    width:10%;
+    height: 100px;
+    background-color: #EDEDED;
+    font-size: 1.1em;
+}
+
+.navbtn {
+    display: table-cell;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 200px;
+    height: 100px;
+    float:bottom;
+    overflow:hidden;
+    text-align:center;
+    vertical-align:middle;
+
+    border-style: outset;
+    border-width: 10px
+    border-color: #black;
+}
+
+.right {
+    position:absolute;
+    right: 10.5%;
+}
+.left {
+    position:absolute;
+    left: 10.5%;
+}
+
+.checked:hover{
+    background-color: #A72234;
+}
+.checked {
+    background-color: #872234;
+    color: #DDD;
 }
 
