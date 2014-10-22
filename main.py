@@ -2,6 +2,7 @@ import webapp2
 import jinja2
 import os
 import random
+import logging
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -55,6 +56,7 @@ show_events = [
         'The episode is hosted by Josh, Vance, or The Pinch',
         'Amir adds "-smith" to the end of an activity/occupation',
         'Tinder comes up',
+        'Bonus Thursday episode',
         'Someone insults J&A in the question prompt',
 ]
 
@@ -62,8 +64,21 @@ free_ad = 'Things got real'
 ad_events = [
         'Only Amir telling the ad',
         '3+ ads in 1 episode',
+        'Naturebox',
+        'Amir repeats the name of the company at least 3 times in a row',
+        'Squarespace',
+        'MeUndies',
+        'New sponsor (first time on the show)',
+        'J&A get free stuff from the ad company',
+        'Jake mispronounces the company\'s name intentionally',
         'Promo code "Jake" vs. Promo code "Amir"',
 ]
+
+game_data = {
+        'theme' : (free_theme, theme_events),
+        'show' : (free_show, show_events),
+        'ad' : (free_ad, ad_events),
+}
 
 free_points = [free_ad, free_show, free_theme]
 
@@ -73,15 +88,19 @@ class MainHandler(webapp2.RequestHandler):
         self.response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
         self.response.headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE'
 
-  def themeGetRows(self):
-        l = random.sample(theme_events, len(theme_events)-1)
+  def getRows(self, gamemode):
+        if gamemode == 'none':
+            return None
+        data = game_data[gamemode]
+        events = data[1]
+        l = random.sample(events, len(events)-1)
         rows = [] 
         for i in range(5):
             row = []
             for j in range(5):
                 try:
                     if 5*i+j == 12: #if at midpoint
-                        row.append(free_theme)
+                        row.append(data[0])
                     else:
                         row.append(l[5*i + j])
                 except IndexError:
@@ -91,9 +110,23 @@ class MainHandler(webapp2.RequestHandler):
 
   def get(self):
         self.response.headers.add_header("Access-Control-Allow-Origin", "*")
+
+        gamemode = 'none'
+        if self.request.path == '/theme':
+            gamemode = 'theme'
+        if self.request.path == '/show':
+            gamemode = 'show'
+        if self.request.path == '/ad':
+            gamemode = 'ad'
+
+        if gamemode == 'none':
+            template = JINJA_ENVIRONMENT.get_template('default.html')
+            self.response.write(template.render({}))
+            return
+
         template = JINJA_ENVIRONMENT.get_template('index.html')
 
-        rows = self.themeGetRows()
+        rows = self.getRows(gamemode)
         
         template_values = {
                 'rows': rows, #list of lists - assert(len(rows) == 25 and 13th one is the default)
@@ -102,5 +135,9 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/show', MainHandler),
+    ('/theme', MainHandler),
+    ('/ad', MainHandler),
+    ('/', MainHandler),
 ], debug=True)
+

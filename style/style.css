@@ -18,11 +18,19 @@ td {
     width:10%;
 }
 
+.btn:hover {
+    background-color: #BCBCBC;
+    cursor: pointer;
+}
 .btn {
     padding: 0 20px;
     width:10%;
     height: 100px;
     background-color: #EDEDED;
+}
+
+.checked:hover{
+    background-color: #A72234;
 }
 
 .checked {
