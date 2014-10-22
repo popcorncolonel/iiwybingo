@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <title>If I Were You Bingo!</title>
+</head>
+
+<body>
+    <!-- 
+    5x5 grid of squares, each clickable. 
+        class = bingobutton
+        middle one auto filled in (for theme: mentions jews; for ep: relationship question)
+
+    3 rounds: 
+        1) Opening theme song
+        2) Actual episode
+        3) Ad mode
+    -->
+    <table id="board">
+        {% for row in rows %}
+        <tr class="iiwyrow">
+            {% for option in row %}
+            <td class="btn">{{ option }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <!-- TODO
+    Footer with "random episode" link
+    -->
+</body>
+
+</html>
+{% endautoescape %}
+
