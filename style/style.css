@@ -9,9 +9,10 @@ table {
     border-spacing: 10px;
     margin: 0 auto;
     width: 80%;
+    background-color: black;
 
     vertical-align:middle;
-    padding-top: 10%;
+    margin-top: 1%;
 }
 
 td {
@@ -36,5 +37,24 @@ td {
 .checked {
     background-color: #872234;
     color: #DDD;
+}
+
+#title,
+#header{
+    cursor:pointer; 
+	text-align: center;
+	color: black;
+	margin: 0 auto;
+	padding: 0;
+	font-size: 2em;
+	color: black;
+	background-color: #EDEDED;
+    text-decoration:none;
+}
+
+#header {
+    border-style: outset;
+    border-width: 10px;
+    border-color: #black;
 }
 

@@ -1,3 +1,7 @@
+#Online bingo fangame for the podcast If I Were You
+#http://ifiwereyoushow.com
+#http://seizethecheese.com
+
 import webapp2
 import jinja2
 import os
@@ -13,7 +17,7 @@ free_theme = 'Mentions Judaism'
 theme_events = [
         'Written by Sick/sea',
         'Mentions Starbucks',
-        'Says "If I Were You" at least 5 times',
+        'Repeats "If I Were You" at least 5 times',
         '"#Dope"',
         'Rhymes "If I Were You" with "What I\'d Do"',
         'Really good voice',
@@ -24,8 +28,11 @@ theme_events = [
         'Rhymes "If I Were You" with "Yo Do You"',
         '"Seize the Cheese"',
         'Parody of a popular song',
+        'Shoehorns too many syllables into a line',
         'Parody of a sitcom\'s theme song',
         'White guy rapping',
+        '"Sticky situation"',
+        '"The show starts nowwwww..."',
         'J&A forget to mention the artist',
         'Doesn\'t rhyme',
         'Heavily borrows from Jake\'s Episode 1 theme',
@@ -50,6 +57,8 @@ show_events = [
         'The advice Jake gives makes it sound like he\'s gotten laid in this same situation before',
         'Amir gives math advice',
         'Amir tries to turn the question into tips for him getting laid, personally',
+        '"Conundrum"',
+        '"Sticky situation"',
         'Jake gives up mid-way through answering a question',
         'The guest gets put on blast or puts J&A on blast',
         'Jake gets depressed by the question',
