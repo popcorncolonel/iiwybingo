@@ -1,13 +1,33 @@
 body {
-    text-align:center;
+    background-color:#222;
+    text-align: center;
 }
 
 table {
-    text-align:center;
+    border-spacing: 10px;
+    margin: 0 auto;
+    width: 80%;
+
+    vertical-align:middle;
+    padding-top: 10%;
+}
+
+#board {
+}
+
+td {
+    width:10%;
 }
 
 .btn {
+    padding: 0 20px;
+    width:10%;
+    height: 100px;
+    background-color: #EDEDED;
 }
 
 .checked {
+    background-color: #872234;
+    color: #DDD;
 }
+

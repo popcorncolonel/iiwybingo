@@ -16,6 +16,8 @@ theme_events = [
         '"#Dope"',
         'Rhymes "If I Were You" with "What I\'d Do"',
         'Really good voice',
+        'Really bad voice',
+        'J&A insult it ironically',
         'Less than 15 seconds',
         'Stony\'s Version',
         'Rhymes "If I Were You" with "Yo Do You"',
@@ -24,7 +26,6 @@ theme_events = [
         'Parody of a sitcom\'s theme song',
         'White guy rapping',
         'Mentions Kobe Bryant in the background',
-        '',
         ]
 
 free_show = 'Relationship question'
@@ -53,7 +54,7 @@ class MainHandler(webapp2.RequestHandler):
             row = []
             for j in range(5):
                 try:
-                    if 5*i+j == 13: #if at midpoint
+                    if 5*i+j == 12: #if at midpoint
                         row.append(free_theme)
                     else:
                         row.append(l[5*i + j])

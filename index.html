@@ -20,11 +20,15 @@
         2) Actual episode
         3) Ad mode
     -->
-    <table id="board">
+    <table align="center">
         {% for row in rows %}
         <tr class="iiwyrow">
             {% for option in row %}
-            <td class="btn">{{ option }}</td>
+                {% if option == 'Mentions Judaism' %}
+                    <td class="btn checked">{{ option }}</td>
+                {% else %}
+                    <td class="btn">{{ option }}</td>
+                {% endif %}
             {% endfor %}
         </tr>
         {% endfor %}
