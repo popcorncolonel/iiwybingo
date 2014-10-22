@@ -1,6 +1,8 @@
 body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color:#222;
     text-align: center;
+    color: black;
 }
 
 table {
@@ -10,9 +12,6 @@ table {
 
     vertical-align:middle;
     padding-top: 10%;
-}
-
-#board {
 }
 
 td {

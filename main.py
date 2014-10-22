@@ -25,7 +25,11 @@ theme_events = [
         'Parody of a popular song',
         'Parody of a sitcom\'s theme song',
         'White guy rapping',
-        'Mentions Kobe Bryant in the background',
+        'J&A forget to mention the artist',
+        'Doesn\'t rhyme',
+        'Heavily borrows from Jake\'s Episode 1 theme',
+        '"Beast in that regard"',
+        'Uses J&A\'s voices as musical instruments',
         ]
 
 free_show = 'Relationship question'
@@ -33,13 +37,35 @@ show_events = [
         'Live podcast',
         'Guest Episode',
         'Douchebag guy',
+        'They tell someone to break up',
+        'Jake approves of Amir\'s intro',
+        '"Momma turn down the podcast"',
+        'Something is coy',
+        'Someone rhymes jokingly',
+        'Jake shows appreciation for his dad\'s money',
+        'Amir tries to divert attention from his middle name',
+        'Jake professes his love for Amir, which is not returned',
+        'Someone is "hard" or "jerking off right now"',
+        'The advice Jake gives makes it sound like he\'s gotten laid in this same situation before',
+        'Amir gives math advice',
+        'Amir tries to turn the question into tips for him getting laid, personally',
+        'Jake gives up mid-way through answering a question',
+        'The guest gets put on blast or puts J&A on blast',
+        'Jake gets depressed by the question',
+        'The episode is hosted by Josh, Vance, or The Pinch',
+        'Amir adds "-smith" to the end of an activity/occupation',
+        'Tinder comes up',
+        'Someone insults J&A in the question prompt',
 ]
 
 free_ad = 'Things got real'
 ad_events = [
-        'Only Amir',
+        'Only Amir telling the ad',
+        '3+ ads in 1 episode',
         'Promo code "Jake" vs. Promo code "Amir"',
 ]
+
+free_points = [free_ad, free_show, free_theme]
 
 class MainHandler(webapp2.RequestHandler):
   def options(self):      
@@ -70,7 +96,8 @@ class MainHandler(webapp2.RequestHandler):
         rows = self.themeGetRows()
         
         template_values = {
-                'rows': rows #list of lists - assert(len(rows) == 25 and 13th one is the default)
+                'rows': rows, #list of lists - assert(len(rows) == 25 and 13th one is the default)
+                'free_points': free_points,
         }
         self.response.write(template.render(template_values))
 

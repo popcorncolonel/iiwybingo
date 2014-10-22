@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <!-- 
+{#
     5x5 grid of squares, each clickable. 
         class = bingobutton
         middle one auto filled in (for theme: mentions jews; for ep: relationship question)
@@ -19,12 +19,12 @@
         1) Opening theme song
         2) Actual episode
         3) Ad mode
-    -->
+#}
     <table align="center">
         {% for row in rows %}
         <tr class="iiwyrow">
             {% for option in row %}
-                {% if option == 'Mentions Judaism' %}
+                {% if option in free_points %}
                     <td class="btn checked">{{ option }}</td>
                 {% else %}
                     <td class="btn">{{ option }}</td>
@@ -33,9 +33,9 @@
         </tr>
         {% endfor %}
     </table>
-    <!-- TODO
+{#
     Footer with "random episode" link
-    -->
+#}
 </body>
 
 </html>
