@@ -14,7 +14,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-free_theme = 'Mentions Judaism'
+free_theme = 'Calls J&A Jews'
 theme_events = [
         'Written by Sick/sea',
         'Mentions Starbucks',
@@ -28,11 +28,12 @@ theme_events = [
         'Stony\'s Version',
         'Rhymes "If I Were You" with "Yo Do You"',
         '"Seize the Cheese"',
-        'Really obscure reference',
+        'Really obscure podcast reference',
         'Parody of a popular song',
         'Shoehorns too many syllables into a line',
         'Parody of a sitcom\'s theme song',
         'White guy rapping',
+        'So much autotude it\'s incomprehensible',
         '"Sticky situation"',
         '"The show starts nowwwww..."',
         'J&A forget to mention the artist',
@@ -59,6 +60,7 @@ show_events = [
         'One of them messes up reading a question',
         '"Haeeehhh!"',
         'Really obscure anonymous names',
+        'J&A talk at the same time',
         'Something is coy',
         'Someone rhymes',
         'Jake shows appreciation for his dad\'s money',
@@ -82,13 +84,18 @@ show_events = [
         'The episode is hosted by Josh, Vance, or The Pinch',
         'Amir adds "-smith" to the end of an activity/occupation',
         'Tinder comes up',
+        'They call themselves heroes',
         'Callback joke from a previous question',
+        '"To that I say todah"',
+        '"Todah"',
+        'Amir tells someone to talk into the mic',
         'Bonus Thursday episode',
         'Someone insults J&A in the question prompt',
 ]
 
-free_ad = 'Things got real'
+free_ad = '"Things get real"'
 ad_events = [
+        '2 ads in 1 ad segment',
         'Only Amir telling the ad',
         '3+ ads in 1 episode',
         'They "Lose a sponsor" during an ad',
@@ -99,7 +106,12 @@ ad_events = [
         'Jake takes the bit too far',
         'Amir repeats the name of the company at least 3 times in a row',
         'Squarespace',
+        'Dollar Shave Club',
+        'Really unnatural mid-show ad break',
         'MeUndies',
+        'Amir talks for over a full minute without Jake',
+        'Jake uses an accent in the ad pitch',
+        'Amir actually forgets to say "things got real"',
         'More time is spent during the break on ads than on talking during the break',
         'New sponsor (first time on the show)',
         'J&A get free stuff from the ad company',

@@ -19,6 +19,10 @@ td {
     width:10%;
 }
 
+p {
+    color:white;
+}
+
 a {
     text-decoration: none;
     color:black;
@@ -54,7 +58,7 @@ a {
     background-color: #BCBCBC;
     cursor: pointer;
 }
-.navbtn,
+
 .btn {
     padding: 0 20px;
     width:10%;
@@ -62,21 +66,43 @@ a {
     background-color: #EDEDED;
     font-size: 1.1em;
 }
+.alignleft {
+  float: left;
+  /*margin-left:10%;*/
+  text-align:left;
+}
+.aligncenter {
+  float: left;
+  margin: 0 auto;
+  text-align:center;
+}
+.alignright {
+  float: left;
+  /*margin-right:10%;*/
+  text-align:right;
+}
+.wrapper {
+    width:33%;
+}
+.wrapperwrapper {
+    margin-left: 15%;
+    margin-top: 6.5%;
+}
 
 .navbtn {
     display: table-cell;
-    padding-top: 10px;
-    padding-left: 10px;
     width: 200px;
     height: 100px;
     float:bottom;
     overflow:hidden;
     text-align:center;
+    background-color: #EDEDED;
     vertical-align:middle;
+    font-size: 1.1em;
 
     border-style: outset;
     border-width: 10px
-    border-color: #black;
+    border-color: grey;
 }
 
 .right {
@@ -94,5 +120,20 @@ a {
 .checked {
     background-color: #872234;
     color: #DDD;
+}
+
+.footer{
+    text-align: center;
+    width: 100%;
+    font-size : 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position:fixed;
+    bottom:0px;
+    background-color: #EDEDED;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    margin-left: -10px;
 }
 
