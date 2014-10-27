@@ -27,12 +27,15 @@ theme_events = [
         'Less than 15 seconds',
         'Stony\'s Version',
         'Rhymes "If I Were You" with "Yo Do You"',
+        '"Rock and a hard place"',
         '"Seize the Cheese"',
         'Really obscure podcast reference',
         'Parody of a popular song',
         'Shoehorns too many syllables into a line',
         'Parody of a sitcom\'s theme song',
         'White guy rapping',
+        'Todah',
+        'Catchy tune',
         'So much autotude it\'s incomprehensible',
         '"Sticky situation"',
         '"The show starts nowwwww..."',
@@ -40,7 +43,7 @@ theme_events = [
         'Doesn\'t rhyme',
         'Heavily borrows from Jake\'s Episode 1 theme',
         '"Beast in that regard"',
-        'Uses J&A\'s voices as musical instruments',
+        'Uses samples from the podcast as musical instruments',
         ]
 
 free_show = 'Relationship question'
@@ -89,26 +92,33 @@ show_events = [
         '"To that I say todah"',
         '"Todah"',
         'Amir tells someone to talk into the mic',
+        'Yo do you',
         'Bonus Thursday episode',
         'Someone insults J&A in the question prompt',
 ]
 
-free_ad = '"Things get real"'
+free_ad = '"Things got real"'
 ad_events = [
         '2 ads in 1 ad segment',
         'Only Amir telling the ad',
         '3+ ads in 1 episode',
         'They "Lose a sponsor" during an ad',
-        'They jokingly advertise for something that is not a company (bananas)',
+        'They jokingly advertise for something that is not a company (aka, bananas)',
         'Names/website shoutouts are read',
         'The ad pitch uses a rhyme',
+        'Jake really forcing it',
+        'They suggest website names/uses for the company\'s product',
+        'They start the pitch using a song',
         'Naturebox',
+        'Squarespace',
+        'MeUndies',
+        'Jake acts stupid during the pitch',
+        'J&A jokingly call listeners losers/nerds/suckers/etc',
         'Jake takes the bit too far',
         'Amir repeats the name of the company at least 3 times in a row',
-        'Squarespace',
         'Dollar Shave Club',
         'Really unnatural mid-show ad break',
-        'MeUndies',
+        'Promo code is something other than "Amir/Jake/ifiwereyou"',
         'Amir talks for over a full minute without Jake',
         'Jake uses an accent in the ad pitch',
         'Amir actually forgets to say "things got real"',
@@ -144,13 +154,13 @@ class MainHandler(webapp2.RequestHandler):
             row = []
             for j in range(5):
                 try:
-                    if 5*i+j == 12: #if at midpoint
-                        row.append(data[0])
+                    if 5*i+j == 12: #if at midpoint, write the default
+                        row.append((j,data[0]))
                     else:
-                        row.append(l[5*i + j])
+                        row.append((j,l[5*i + j]))
                 except IndexError:
                     pass
-            rows.append(row)
+            rows.append((i, row))
         return rows
 
   def get(self):

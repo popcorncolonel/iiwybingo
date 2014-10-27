@@ -82,36 +82,50 @@ a {
   text-align:right;
 }
 .wrapper {
-    width:33%;
+    width:26%;
 }
 .wrapperwrapper {
-    margin-left: 15%;
-    margin-top: 6.5%;
+    margin-left: 25%;
+    margin-top: 3.5%;
+}
+
+.footer a:hover {
+    color:grey;
+}
+
+.outerbtn{
+     position: relative;
+     overflow:hidden;
+    display: table;
 }
 
 .navbtn {
     display: table-cell;
+    
     width: 200px;
-    height: 100px;
-    float:bottom;
-    overflow:hidden;
     text-align:center;
     background-color: #EDEDED;
     vertical-align:middle;
-    font-size: 1.1em;
+    font-size: 1.8em;
 
     border-style: outset;
-    border-width: 10px
+    border-width: 4px;
     border-color: grey;
 }
 
 .right {
+    margin-top: 10px;
+    margin-right: 10.5%;
+    float:right;
     position:absolute;
-    right: 10.5%;
+    right: 0px;
 }
 .left {
     position:absolute;
-    left: 10.5%;
+    margin-top: 10px;
+    margin-left: 10.5%;
+    float:left;
+    left:0px;
 }
 
 .checked:hover{
@@ -134,6 +148,6 @@ a {
     border-top: 4px solid black;
     border-left: 4px solid black;
     border-right: 4px solid black;
-    margin-left: -10px;
+    margin-left: -12px;
 }
 
