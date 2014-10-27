@@ -36,7 +36,7 @@ theme_events = [
         'White guy rapping',
         'Todah',
         'Catchy tune',
-        'So much autotude it\'s incomprehensible',
+        'So much autotune it\'s incomprehensible',
         '"Sticky situation"',
         '"The show starts nowwwww..."',
         'J&A forget to mention the artist',
