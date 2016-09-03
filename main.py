@@ -96,6 +96,8 @@ show_events = [
         'Yo do you',
         'Bonus Thursday episode',
         'Someone insults J&A in the question prompt',
+        'The game boy',
+        'The game boy is victorious!',
 ]
 
 free_ad = '"Things got real"'
@@ -144,7 +146,7 @@ class MainHandler(webapp2.RequestHandler):
         self.response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
         self.response.headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE'
 
-  def getRows(self, gamemode):
+  def get_rows(self, gamemode):
         if gamemode == 'none':
             return None
         data = game_data[gamemode]
@@ -182,7 +184,7 @@ class MainHandler(webapp2.RequestHandler):
 
         template = JINJA_ENVIRONMENT.get_template('index.html')
 
-        rows = self.getRows(gamemode)
+        rows = self.get_rows(gamemode)
         
         template_values = {
                 'rows': rows, #list of lists - assert(len(rows) == 25 and 13th one is the default)
